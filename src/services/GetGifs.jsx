@@ -1,15 +1,15 @@
-const api__Key = "q1H2OBlMkmsvrSy7JYg53WvDC8tVLxFt";
-const api__name = "morty";
-export const GetGifs = async (props) => {
-  const apiURL = `https://api.giphy.com/v1/gifs/search?api_key=${api__Key}&q=${api__name}&limit=10&offset=0&rating=g&lang=e`;
-  return fetch(apiURL)
+export const GetGifs = (key_word) => {
+  return fetch(
+    `https://api.giphy.com/v1/gifs/search?api_key=q1H2OBlMkmsvrSy7JYg53WvDC8tVLxFt&q=${key_word}&limit=15&offset=0&rating=g&lang=en`
+  )
     .then((r) => r.json())
     .then((res) => {
+      console.log(res);
       const { data } = res;
       const giffs = data.map((i) => {
-        const { url } = i.images.downsized_medium;
-        const { images, id, title } = i;
-        return { url, id, title, images };
+        const url = i.images.downsized_medium.url;
+        const { title, id } = i;
+        return { title, url, id };
       });
       return giffs;
     });
