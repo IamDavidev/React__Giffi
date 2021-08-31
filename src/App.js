@@ -1,7 +1,7 @@
 import "./App.css";
 import Gif from "./components/Gif";
 import { Route, Link } from "wouter";
-
+import { Details } from "./components/Deatails";
 function App() {
   return (
     <div className="App">
@@ -16,8 +16,10 @@ function App() {
         >
           gifs
         </Link>
+        <Link to="/gif/details" >details or gif</Link>
 
         <Route component={Gif} path="/gif" />
+        <Route component={Details} path='/gif/details' />
       </section>
     </div>
   );
