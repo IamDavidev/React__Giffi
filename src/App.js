@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
-
+import { useState, useEffect } from "react";
+import "./App.css";
+import { GetGifs } from "./services/GetGifs";
 function App() {
+  const [gifs, setGifs] = useState([]);
+  useEffect(() => {
+    GetGifs().then((gifs) => setGifs(gifs));
+  });
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <section className="App-content">
+        <h1>using gifs api with react app</h1>
+
+        <picture>
+          {gifs.map((setisgif, i) => (
+            <div className="App-content">
+              <h4>{setisgif.title}</h4>
+              <img src={setisgif.url} key={i} alt="imgenes in api giffs pro " />
+              <h6>{setisgif.id}</h6>
+            </div>
+          ))}
+        </picture>
+      </section>
     </div>
   );
 }
