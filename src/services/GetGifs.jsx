@@ -1,16 +1,23 @@
-export const GetGifs = (key_word) => {
-  return fetch(
-    `https://api.giphy.com/v1/gifs/search?api_key=q1H2OBlMkmsvrSy7JYg53WvDC8tVLxFt&q=${key_word}&limit=15&offset=0&rating=g&lang=en`
+
+const key__api = "CyPDl7NZqdAIv5Ez2RNKai6Aeu8HVx17";
+const GetGifs = async ({ search }) => {
+  const res = await fetch(
+    `https://api.giphy.com/v1/gifs/search?q=${search}&api_key=${key__api}`
   )
     .then((r) => r.json())
-    .then((res) => {
-      console.log(res);
-      const { data } = res;
-      const giffs = data.map((i) => {
-        const url = i.images.downsized_medium.url;
+    .then((resp) => {
+      const { data } = resp;
+      const dataGiffs = data.map((i) => {
+        const { url } = i.images.downsized_medium;
         const { title, id } = i;
-        return { title, url, id };
+        // console.log(url ,title ,id )
+        return { url, title, id };
       });
-      return giffs;
+      // console.log(res)
+      return dataGiffs;
     });
+
+  return res;
 };
+
+export default GetGifs;

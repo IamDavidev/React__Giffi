@@ -1,7 +1,9 @@
 import "./App.css";
 import Gif from "./components/Gif";
-import { Route, Link } from "wouter";
-import { Details } from "./components/Deatails";
+// import GetGifs from "./services/GetGifs";
+// import Gif from "./components/Gif";
+// import { Route, Link } from "wouter";
+// import { Details } from "./components/Deatails";
 function App() {
   return (
     <div className="App">
@@ -10,7 +12,9 @@ function App() {
           hola esta es la pagina principal de mi primera pagina web o aplicacion
           con React
         </h1>
-        <Link
+        <Gif keyword="mexico" />
+        {/* <GetGifs /> */}
+        {/* <Link
           to="/gif
         "
         >
@@ -19,7 +23,7 @@ function App() {
         <Link to="/gif/details" >details or gif</Link>
 
         <Route component={Gif} path="/gif" />
-        <Route component={Details} path='/gif/details' />
+        <Route component={Details} path='/gif/details' /> */}
       </section>
     </div>
   );
