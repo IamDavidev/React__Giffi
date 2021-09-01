@@ -1,19 +1,20 @@
-
+import "./Gif.css";
 import { useEffect, useState } from "react";
 import GetGifs from "../services/GetGifs";
 
-const Gif = (keyword) => {
+const Gif = ({ params }) => {
+  const { keyword } = params;
   const [gifs, setGifs] = useState([]);
   useEffect(() => {
-    GetGifs({search : 'mexico'}).then((gifs) => setGifs(gifs));
+    GetGifs({ search: keyword}).then((gifs) => setGifs(gifs));
   }, [keyword]);
   return gifs.map(({ title, url, id }) => (
-    <div className="Card__gfs" key={id}>
-      <h4>
-        {title}
-        <p>{id}</p>
-        <img src={url} alt={title} key={id} />
-      </h4>
+    <div className="Card__gifs" key={id}>
+      <h4> {title} </h4>
+      <img lazy="load" src={url} alt={title} key={id} />
+      <a href={url} target="__blank">
+        GIF
+      </a>
     </div>
   ));
 };

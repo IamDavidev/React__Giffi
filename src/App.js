@@ -1,30 +1,10 @@
 import "./App.css";
-import Gif from "./components/Gif";
-// import GetGifs from "./services/GetGifs";
-// import Gif from "./components/Gif";
-// import { Route, Link } from "wouter";
-// import { Details } from "./components/Deatails";
+import Home from "./pages/home.jsx";
+
 function App() {
   return (
     <div className="App">
-      <section className="App-content">
-        <h1>
-          hola esta es la pagina principal de mi primera pagina web o aplicacion
-          con React
-        </h1>
-        <Gif keyword="mexico" />
-        {/* <GetGifs /> */}
-        {/* <Link
-          to="/gif
-        "
-        >
-          gifs
-        </Link>
-        <Link to="/gif/details" >details or gif</Link>
-
-        <Route component={Gif} path="/gif" />
-        <Route component={Details} path='/gif/details' /> */}
-      </section>
+      <Home />
     </div>
   );
 }
