@@ -6,14 +6,17 @@
 .App-content {
   min-height: 100vh;
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
+  justify-content: center;
   color: hsl(180, 100%, 50%);
 }
 
 h1 {
   text-transform: uppercase;
   font-size: 30px;
+}
+h2{
+  width:100%;
 }
 
 input {
