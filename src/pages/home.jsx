@@ -2,6 +2,7 @@ import { Route, useLocation } from "wouter";
 import { useState } from "react";
 import Gif from "../components/Gif";
 const Home = () => {
+  // console.log('-')
   const [keyword, setkeyword] = useState("");
   const [path, setPush] = useLocation();
   const handleSubmit = (evt) => {

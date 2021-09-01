@@ -1,13 +1,11 @@
 import "./Gif.css";
-import { useEffect, useState } from "react";
-import GetGifs from "../services/GetGifs";
+// import { useEffect, useState } from "react";
+// import GetGifs from "../services/GetGifs";
+import useGifs from "../hooks/useGifs";
 
 const Gif = ({ params }) => {
   const { keyword } = params;
-  const [gifs, setGifs] = useState([]);
-  useEffect(() => {
-    GetGifs({ search: keyword}).then((gifs) => setGifs(gifs));
-  }, [keyword]);
+  const gifs = useGifs({keyword})
   return gifs.map(({ title, url, id }) => (
     <div className="Card__gifs" key={id}>
       <h4> {title} </h4>
