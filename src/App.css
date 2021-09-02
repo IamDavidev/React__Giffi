@@ -15,13 +15,25 @@ h1 {
   text-transform: uppercase;
   font-size: 30px;
 }
-h2{
-  width:100%;
+.nav__search {
+  display:flex;
+  justify-content: space-around;
 }
 
 input {
   margin: 20px;
-
+  background: #444343;
+  color: rgb(0, 0, 0);
+  padding: 10px;
+  font-size: 20px;
+  border-radius:16px;
+  box-shadow: 0px 0px 0px 2px #fff;
+}
+input:focus {
+  outline: none;
+}
+h2 {
+  width: 100%;
 }
 
 .Links {
