@@ -1,5 +1,6 @@
 
 const key__api = "CyPDl7NZqdAIv5Ez2RNKai6Aeu8HVx17";
+
 const GetGifs = async ({ search }) => {
   const res = await fetch(
     `https://api.giphy.com/v1/gifs/search?q=${search}&api_key=${key__api}`

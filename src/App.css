@@ -2,7 +2,18 @@
   text-align: center;
   color: #fff;
 }
-
+.section__gifs{
+  display:grid;
+  grid-template-columns: 1fr 150px;
+  
+}
+.Trending__search{
+  color: #0ff;
+}
+.Trending__search a{
+  color: rgb(255, 0, 0);
+  font-size:20px;
+}
 .App-content {
   min-height: 100vh;
   display: flex;
