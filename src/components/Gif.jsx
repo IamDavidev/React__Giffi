@@ -4,7 +4,7 @@ import "./Gif.css";
 import useGifs from "../hooks/useGifs";
 
 const Gif = ({ params }) => {
-  console.log('-')
+  // console.log('-')
   const { keyword } = params;
   const gifs = useGifs({keyword})
   return gifs.map(({ title, url, id }) => (

@@ -5,7 +5,10 @@
 .section__gifs{
   display:grid;
   grid-template-columns: 1fr 150px;
-  
+  /* grid-gap//=> hace una separacion entre los elementos y sus columns y rows 
+    grid-gap : 16px tendra un separacion entre ellos de 16px 
+    tambin 
+   */
 }
 .Trending__search{
   color: #0ff;

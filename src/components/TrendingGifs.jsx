@@ -20,7 +20,7 @@ const LazyTrending = () => {
   useEffect(function () {
     const onChange = (ent, observer) => {
       const elt = ent[0];
-      console.log(elt.isIntersecting)
+      // console.log(elt.isIntersecting)
       if (elt.isIntersecting) {
         setLazy(true);
         observer.disconnect();

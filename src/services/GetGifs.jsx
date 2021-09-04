@@ -1,9 +1,10 @@
-
 const key__api = "CyPDl7NZqdAIv5Ez2RNKai6Aeu8HVx17";
 
-const GetGifs = async ({ search }) => {
+const GetGifs = async ({ search, limit, page = 0 }) => {
   const res = await fetch(
-    `https://api.giphy.com/v1/gifs/search?q=${search}&api_key=${key__api}`
+    `https://api.giphy.com/v1/gifs/search?q=${search}&api_key=${key__api}&limit=${limit}&offset=${
+      page * limit
+    }`
   )
     .then((r) => r.json())
     .then((resp) => {
