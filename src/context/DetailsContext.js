@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 const DetailsContext = React.createContext({
   name: "",
@@ -6,3 +6,4 @@ const DetailsContext = React.createContext({
 });
 
 
+export default DetailsContext
